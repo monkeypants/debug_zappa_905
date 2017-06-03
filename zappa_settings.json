@@ -1,0 +1,7 @@
+{
+  "default": {
+    "app_function": "app.app",
+    "exclude": ["*~", "tmp/", "dist/"],
+    "aws_region": "ap-southeast-2"
+  }
+}
