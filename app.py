@@ -9,9 +9,12 @@ app = Flask(__name__)
 def debug_info():
     environment = []
     for k in os.environ.keys():
-        environment.append({
-            'key':k,
-            'value':os.environ.get(k)})
+        if k != 'AWS_SECRET_ACCESS_KEY':
+            value = os.environ.get(k)
+        else:
+            value = "Ha! wouldn't you like to know"
+        environment.append({'key':k, 'value':value})
+
     sys_path = []
     for x in sys.path:
         sys_path.append(x)
